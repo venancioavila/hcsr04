@@ -10,7 +10,7 @@ const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 // LED
 const led = new Gpio(20, { mode: Gpio.OUTPUT });
 
-led.pwmWrite(0);
+led.digitalWrite(0);
 trigger.digitalWrite(0); // Make sure trigger is low
 
 const watchHCSR04 = () => {
@@ -24,8 +24,11 @@ const watchHCSR04 = () => {
       const diff = (endTick >> 0) - (startTick >> 0); // Unsigned 32 bit arithmetic
       const distance = diff / 2 / MICROSECDONDS_PER_CM;
 
-      if (distance < 200) {
-        led.pwmWrite(distance);
+      if (distance < 10) {
+        led.digitalWrite(1);
+      }
+      if (distance > 10) {
+        led.digitalWrite(0);
       }
 
       console.log(distance.toFixed(2));
