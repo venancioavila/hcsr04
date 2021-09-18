@@ -27,7 +27,7 @@ const watchHCSR04 = () => {
       if (distance < 70) {
         led.digitalWrite(1);
       }
-      if (distance > 10) {
+      if (distance > 70) {
         led.digitalWrite(0);
       }
 
