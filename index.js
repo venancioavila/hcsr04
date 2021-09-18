@@ -8,7 +8,7 @@ const trigger = new Gpio(23, { mode: Gpio.OUTPUT });
 const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 
 // LED
-const led = new Gpio(4, { mode: Gpio.INPUT });
+const led = new Gpio(4, { mode: Gpio.OUTPUT });
 
 led.pwmWrite(0);
 trigger.digitalWrite(0); // Make sure trigger is low
