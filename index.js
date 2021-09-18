@@ -31,7 +31,7 @@ const watchHCSR04 = () => {
         led.digitalWrite(0);
       }
 
-      console.log(distance.toFixed(2));
+      //   console.log(distance.toFixed(2));
     }
   });
 };
@@ -41,4 +41,4 @@ watchHCSR04();
 // Trigger a distance measurement once per second
 setInterval(() => {
   trigger.trigger(10, 1); // Set trigger high for 10 microseconds
-}, 300);
+}, 100);
