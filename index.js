@@ -8,9 +8,9 @@ const trigger = new Gpio(23, { mode: Gpio.OUTPUT });
 const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 
 // LED
-const led = new Gpio(4, { mode: Gpio.OUTPUT });
+const led = new Gpio(17, { mode: Gpio.OUTPUT });
 
-led.digitalWrite(0);
+led.digitalWrite(1);
 trigger.digitalWrite(0); // Make sure trigger is low
 
 const watchHCSR04 = () => {
