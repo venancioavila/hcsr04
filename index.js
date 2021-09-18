@@ -26,7 +26,6 @@ const watchHCSR04 = () => {
 
       if (distance < 10) {
         led.digitalWrite(1);
-        console.log("Alert!");
       }
       if (distance > 10) {
         led.digitalWrite(0);
@@ -42,4 +41,4 @@ watchHCSR04();
 // Trigger a distance measurement once per second
 setInterval(() => {
   trigger.trigger(10, 1); // Set trigger high for 10 microseconds
-}, 10);
+}, 500);
