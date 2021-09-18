@@ -9,7 +9,6 @@ const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 
 // LED
 const led = new Gpio(20, { mode: Gpio.OUTPUT });
-const buzzer = new Gpio(16, { mode: Gpio.OUTPUT });
 
 led.digitalWrite(0);
 trigger.digitalWrite(0); // Make sure trigger is low
@@ -27,7 +26,6 @@ const watchHCSR04 = () => {
 
       if (distance < 70) {
         led.digitalWrite(1);
-        buzzer.pwmWrite(Math.round(distance));
       }
       if (distance > 70) {
         led.digitalWrite(0);
@@ -43,4 +41,4 @@ watchHCSR04();
 // Trigger a distance measurement once per second
 setInterval(() => {
   trigger.trigger(10, 1); // Set trigger high for 10 microseconds
-}, 100);
+}, 500);
