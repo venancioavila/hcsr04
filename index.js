@@ -23,7 +23,7 @@ const watchHCSR04 = () => {
       const endTick = tick;
       const diff = (endTick >> 0) - (startTick >> 0); // Unsigned 32 bit arithmetic
       const distance = diff / 2 / MICROSECDONDS_PER_CM;
-      led.pwmWrite(distance);
+      led.pwmWrite(Math.round(distance));
       console.log(diff / 2 / MICROSECDONDS_PER_CM);
     }
   });
