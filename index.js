@@ -14,8 +14,9 @@ const buzzer = new Gpio(16, { mode: Gpio.OUTPUT });
 while (true) {
   setInterval(() => {
     buzzer.digitalWrite(1); // Set trigger high for 10 microseconds
-  }, 500);
+  }, 1);
   buzzer.digitalWrite(0);
+  console.log("bip");
 }
 
 led.digitalWrite(0);
