@@ -9,6 +9,14 @@ const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 
 // LED
 const led = new Gpio(20, { mode: Gpio.OUTPUT });
+const buzzer = new Gpio(16, { mode: Gpio.OUTPUT });
+
+while (true) {
+  setInterval(() => {
+    buzzer.digitalWrite(1); // Set trigger high for 10 microseconds
+  }, 500);
+  buzzer.digitalWrite(0);
+}
 
 led.digitalWrite(0);
 trigger.digitalWrite(0); // Make sure trigger is low
