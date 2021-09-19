@@ -31,7 +31,7 @@ const watchHCSR04 = () => {
         led.digitalWrite(0);
       }
 
-      console.log(`${distance.toFixed(2)}cm`);
+      // console.log(`${distance.toFixed(2)}cm`);
     }
   });
 };
