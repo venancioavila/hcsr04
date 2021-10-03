@@ -9,13 +9,10 @@ const servo = () => {
   board.on("ready", () => {
     const servo = new Servo({
       pin: "GPIO26",
-      fps: 10,
+      type: "continuous",
     });
 
-    board.repl.inject({
-      servo,
-    });
-    servo.sweep();
+    servo.cw(1);
   });
 };
 
