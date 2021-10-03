@@ -7,7 +7,7 @@ const board = new Board({
 
 const servo = () => {
   board.on("ready", () => {
-    const servo = new Servo("P1-26");
+    const servo = new Servo("GPIO26");
 
     servo.min();
   });
