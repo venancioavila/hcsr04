@@ -1,14 +1,12 @@
 const Gpio = require("pigpio").Gpio;
 
-const start = () => {
-  const motor = new Gpio(26, { mode: Gpio.OUTPUT });
+const motor = new Gpio(26, { mode: Gpio.OUTPUT });
 
+const start = () => {
   motor.servoWrite(180);
 };
 
 const stop = () => {
-  const motor = new Gpio(26, { mode: Gpio.OUTPUT });
-
   motor.servoWrite(0);
 };
 
