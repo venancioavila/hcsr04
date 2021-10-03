@@ -9,11 +9,10 @@ const servo = () => {
   board.on("ready", () => {
     const servo = new Servo({
       pin: "GPIO26",
-      type: "continuous",
     });
 
     servo.sweep({
-      range: [0, 90],
+      range: [-90, 90],
       interval: 1000,
     });
   });
