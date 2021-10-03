@@ -1,4 +1,7 @@
 const Gpio = require("pigpio").Gpio;
+const servo = require("./servo");
+
+servo();
 
 // The number of microseconds it takes sound to travel 1cm at 20 degrees celcius
 const MICROSECDONDS_PER_CM = 1e6 / 34321;
@@ -9,6 +12,8 @@ const echo = new Gpio(24, { mode: Gpio.INPUT, alert: true });
 
 // LED
 const led = new Gpio(20, { mode: Gpio.OUTPUT });
+
+const DISTANCE = 10;
 
 led.digitalWrite(0);
 trigger.digitalWrite(0); // Make sure trigger is low
@@ -24,10 +29,10 @@ const watchHCSR04 = () => {
       const diff = (endTick >> 0) - (startTick >> 0); // Unsigned 32 bit arithmetic
       const distance = diff / 2 / MICROSECDONDS_PER_CM;
 
-      if (distance < 10) {
+      if (distance < DISTANCE) {
         led.digitalWrite(1);
       }
-      if (distance > 10) {
+      if (distance > DISTANCE) {
         led.digitalWrite(0);
       }
 
