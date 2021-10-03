@@ -30,11 +30,11 @@ const watchHCSR04 = () => {
 
       if (distance < DISTANCE) {
         led.digitalWrite(1);
-        motor.servoWrite(180);
+        motor.servoWrite(100);
       }
       if (distance > DISTANCE) {
         led.digitalWrite(0);
-        motor.servoWrite(0);
+        motor.servoWrite(-100);
       }
 
       console.log(`${distance.toFixed(2)}cm`);
