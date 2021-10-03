@@ -7,10 +7,12 @@ const board = new Board({
 
 const servo = () => {
   board.on("ready", () => {
-    const servo = new Servo("GPIO26");
+    const servo = new Servo({
+      pin: "GPIO26",
+      fps: 100,
+    });
 
-    servo.min();
-    servo.max();
+    servo.to(180);
   });
 };
 
