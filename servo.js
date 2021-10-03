@@ -14,7 +14,7 @@ const servo = () => {
 
     servo.sweep({
       range: [-180, 180],
-      interval: 1000,
+      interval: 5000,
     });
   });
 };
