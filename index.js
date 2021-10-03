@@ -1,7 +1,7 @@
 const Gpio = require("pigpio").Gpio;
 const servo = require("./servo");
 
-// servo();
+servo();
 
 // The number of microseconds it takes sound to travel 1cm at 20 degrees celcius
 const MICROSECDONDS_PER_CM = 1e6 / 34321;
