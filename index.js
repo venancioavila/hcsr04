@@ -24,10 +24,10 @@ const watchHCSR04 = () => {
       const diff = (endTick >> 0) - (startTick >> 0); // Unsigned 32 bit arithmetic
       const distance = diff / 2 / MICROSECDONDS_PER_CM;
 
-      if (distance < 20) {
+      if (distance < 10) {
         led.digitalWrite(1);
       }
-      if (distance > 20) {
+      if (distance > 10) {
         led.digitalWrite(0);
       }
 
