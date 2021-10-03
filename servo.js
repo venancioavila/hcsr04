@@ -3,7 +3,7 @@ const board = new Board();
 
 const servo = () => {
   board.on("ready", () => {
-    const servo = new Servo(26);
+    const servo = new Servo("P1-26");
 
     // Servo alternate constructor with options
     /*
