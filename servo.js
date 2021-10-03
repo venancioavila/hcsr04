@@ -14,6 +14,7 @@ const servo = () => {
     servo.sweep({
       range: [0, 180],
       interval: 1000,
+      step: 10,
     });
   });
 };
