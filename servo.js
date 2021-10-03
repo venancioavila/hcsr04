@@ -9,6 +9,7 @@ const servo = () => {
   board.on("ready", () => {
     const servo = new Servo({
       pin: "GPIO26",
+      startAt: 0,
     });
 
     servo.sweep({
