@@ -1,5 +1,6 @@
 const Gpio = require("pigpio").Gpio;
-const { start, stop } = require("./servo");
+
+const motor = new Gpio(26, { mode: Gpio.OUTPUT });
 
 // The number of microseconds it takes sound to travel 1cm at 20 degrees celcius
 const MICROSECDONDS_PER_CM = 1e6 / 34321;
@@ -29,11 +30,11 @@ const watchHCSR04 = () => {
 
       if (distance < DISTANCE) {
         led.digitalWrite(1);
-        start();
+        motor.servoWrite(180);
       }
       if (distance > DISTANCE) {
         led.digitalWrite(0);
-        stop();
+        motor.servoWrite(0);
       }
 
       console.log(`${distance.toFixed(2)}cm`);
