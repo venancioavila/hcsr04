@@ -9,7 +9,8 @@ const servo = () => {
   board.on("ready", () => {
     const servo = new Servo("GPIO26");
 
-    servo.sweep();
+    servo.min();
+    servo.max();
   });
 };
 
