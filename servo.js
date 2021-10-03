@@ -12,7 +12,7 @@ const servo = () => {
       type: "continuous",
     });
 
-    servo.to(0, 1000);
+    servo.to(180, 1000);
   });
 };
 
