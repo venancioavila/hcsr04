@@ -9,7 +9,7 @@ const servo = () => {
   board.on("ready", () => {
     const servo = new Servo("P1-26");
 
-    servo.sweep();
+    servo.min();
   });
 };
 
