@@ -5,7 +5,7 @@ const board = new Board({
   io: new Raspi(),
 });
 
-const servo = () => {
+const start = () => {
   board.on("ready", () => {
     const servo = new Servo({
       pin: "GPIO26",
@@ -20,4 +20,18 @@ const servo = () => {
   });
 };
 
-module.exports = servo;
+const stop = () => {
+  board.on("ready", () => {
+    const servo = new Servo({
+      pin: "GPIO26",
+      startAt: 0,
+    });
+
+    servo.stop();
+  });
+};
+
+module.exports = {
+  start,
+  stop,
+};
