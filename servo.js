@@ -18,7 +18,7 @@ const servo = () => {
     //   step: 10,
     // });
 
-    servo.max();
+    servo.min();
   });
 };
 
