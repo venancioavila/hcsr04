@@ -12,10 +12,7 @@ const start = () => {
       startAt: 0,
     });
 
-    servo.sweep({
-      range: [0, 180],
-      interval: 1000,
-    });
+    servo.to(-90, 1000);
   });
 };
 
@@ -26,7 +23,7 @@ const stop = () => {
       startAt: 0,
     });
 
-    servo.stop();
+    servo.to(90, 1000);
   });
 };
 
