@@ -1,20 +1,23 @@
 const { Board, Servo } = require("johnny-five");
 const Raspi = require("raspi-io").RaspiIO;
-const Gpio = require("pigpio").Gpio;
 
 const board = new Board({
   io: new Raspi(),
 });
 
 const servo = () => {
-  const motor = new Gpio(26, { mode: Gpio.OUTPUT });
+  board.on("ready", () => {
+    const servo = new Servo({
+      pin: "GPIO26",
+      startAt: 0,
+    });
 
-  let pulseWidth = 1000;
-  let increment = 100;
-
-  setInterval(() => {
-    motor.servoWrite(180);
-  }, 1000);
+    servo.sweep({
+      range: [0, -180],
+      interval: 1000,
+      step: 10,
+    });
+  });
 };
 
 module.exports = servo;
