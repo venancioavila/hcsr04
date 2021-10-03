@@ -12,7 +12,10 @@ const servo = () => {
       fps: 100,
     });
 
-    servo.to(180);
+    board.repl.inject({
+      servo,
+    });
+    servo.sweep();
   });
 };
 
