@@ -13,7 +13,7 @@ const servo = () => {
     });
 
     servo.sweep({
-      range: [-90, 90],
+      range: [0, 180],
       interval: 1000,
     });
   });
