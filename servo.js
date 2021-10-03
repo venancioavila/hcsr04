@@ -12,9 +12,10 @@ const servo = () => {
       type: "continuous",
     });
 
-    servo.to(-90, 500);
-    servo.to(0, 500);
-    servo.to(90, 500);
+    servo.sweep({
+      range: [-90, 90],
+      interval: 1000,
+    });
   });
 };
 
